@@ -1,0 +1,101 @@
+body {
+    /* For Safari 5.1 to 6.0 */
+    background: -webkit-linear-gradient(#001F4C, #0066FF);
+    /* For Opera 11.1 to 12.0 */
+    background: -o-linear-gradient(#001F4C, #0066FF);
+    /* For Firefox 3.6 to 15 */
+    background: -moz-linear-gradient(#001F4C, #0066FF);
+    /* Standard syntax */
+    background: linear-gradient(#001F4C, #0066FF);
+    /* This is needed to overcome a Chrome bug. */
+    height: 100vh;
+    /* As above. */
+    width: 100vw;
+}
+
+#corpo {
+    height: 100vh;
+    width: 100vw;
+}
+
+.windows-bar {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0px;
+    background-color: #203249;
+}
+
+.windows-buttons {
+    float: left;
+    height: 100%;
+}
+
+.windows-icons {
+    float: right;
+    height: 100%;
+}
+
+.windows-button {
+    height: 100%;
+    width: 55px;
+}
+
+.windows-button > img {
+    height: 35px;
+    width: 40px;
+    margin: 8px 0 0 5px;
+}
+
+.windows-button:hover {
+    background-color: #36465B;
+}
+
+.windows-icon {
+    height: 100%;
+    width: 30px;
+    
+    float: left;
+}
+
+.windows-icon > img {
+    margin: 18px 0 0 5px;
+}
+
+.windows-icon:hover {
+    background-color: #36465B;
+}
+
+.windows-clock{
+    color: #fff;
+    
+    height: 100%;
+    width: 100px;
+    
+    float: left;
+}
+
+.windows-clock-time{    
+    margin: 5px 10px 0 5px;
+}
+
+.windows-clock:hover {
+    background-color: #36465B;
+}
+
+.windows-desktop{
+    margin: 15px 0 0 15px;
+}
+
+.windows-desktop-icon{
+    width: 80px;
+}
+
+.windows-desktop-icon img{
+    height: 64px;
+    width: 64px;
+}
+
+.windows-desktop-icon span{
+    color: #fff;
+}

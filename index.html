@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>S2B Aracaju</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/windows.css" rel="stylesheet">
+    <script></script>
+</head>
+
+<body>
+    <div id="corpo">
+        <div class="windows-desktop">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="windows-desktop-icon text-center">
+                        <img src="img/computer.ico" /><br/>
+                        <span>Meu Computador</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="windows-bar">
+            <div class="windows-buttons">
+                <div class="windows-button">
+                    <img src="img/windowsStart.png" />
+                </div>
+            </div>
+            <div class="windows-icons">
+                <div class="windows-icon">
+                    <img src="img/imageres_6155.ico" />
+                </div>
+                <div class="windows-icon">
+                    <img src="img/imageres_6155.ico" />
+                </div>
+                <div class="windows-icon">
+                    <img src="img/imageres_6155.ico" />
+                </div>
+                <div class="windows-clock text-center">
+                    <div class="windows-clock-time">
+                        <span class="hora"></span>
+                        <br/>
+                        <span class="data"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/util.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+        });
+        
+        var relogio = relogio();
+        
+        setInterval(relogio, 1000);
+    </script>
+</body>
+
+</html>
