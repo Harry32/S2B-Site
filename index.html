@@ -26,24 +26,25 @@
         </div>
         <div class="windows-menu">
             <div class="start-menu">
-                <div class="start-menu-tools">
-
-                </div>
                 <div class="start-menu-details">
                     <div class="start-menu-files">
+                        <div class="start-menu-tools">
+                            <img src="img/S2BLogo.png" class="img-circle" />
+                            <span class="text-center">Students 2 Business</span>
+                        </div>
                         <div class="start-menu-session">
                             <div class="page-header">
                                 <h4>Palestras</h4>
                             </div>
-                            <div class="start-menu-session-item">
+                            <div class="start-menu-session-item click">
                                 <img src="img/word.png" />
                                 <span> Palestra 1</span>
                             </div>
-                            <div class="start-menu-session-item">
+                            <div class="start-menu-session-item click">
                                 <img src="img/word.png" />
                                 <span> Palestra 2</span>
                             </div>
-                            <div class="start-menu-session-item">
+                            <div class="start-menu-session-item click">
                                 <img src="img/word.png" />
                                 <span> Palestra 3</span>
                             </div>
@@ -52,15 +53,15 @@
                             <div class="page-header">
                                 <h4>Palestrantes</h4>
                             </div>
-                            <div class="start-menu-session-item">
+                            <div class="start-menu-session-item click">
                                 <img src="img/word.png" />
                                 <span> Palestrante 1</span>
                             </div>
-                            <div class="start-menu-session-item">
+                            <div class="start-menu-session-item click">
                                 <img src="img/word.png" />
                                 <span> Palestrante 2</span>
                             </div>
-                            <div class="start-menu-session-item">
+                            <div class="start-menu-session-item click">
                                 <img src="img/word.png" />
                                 <span> Palestrante 3</span>
                             </div>
@@ -98,24 +99,41 @@
         </div>
     </div>
     <div class="windows-window">
-        
+        <div class="windows-window-toolbar">
+            <button type="button" class="btn btn-default">
+                <span class="icone-barra"></span>
+                <span class="icone-barra"></span>
+                <span class="icone-barra"></span>
+            </button>
+        </div>
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/util.js"></script>
     <script>
         $(".start-menu").hide();
+        $(".windows-window").hide();
 
         $(document).ready(function () {
             $(".windows-button").click(function () {
                 $(".start-menu").toggle("fast");
-                
-                if($("#windowsStartButton").hasClass("ativo"))
-                {
+
+                if ($("#windowsStartButton").hasClass("ativo")) {
                     $("#windowsStartButton").removeClass("ativo");
+                } else {
+                    $("#windowsStartButton").addClass("ativo");
                 }
-                else
-                {
+            });
+            
+            $(".click").click(function () {
+                $(".windows-window").fadeIn("fast");
+                
+                $(".start-menu").toggle("fast");
+
+                if ($("#windowsStartButton").hasClass("ativo")) {
+                    $("#windowsStartButton").removeClass("ativo");
+                } else {
                     $("#windowsStartButton").addClass("ativo");
                 }
             });
@@ -126,4 +144,5 @@
         setInterval(relogio, 1000);
     </script>
 </body>
+
 </html>
