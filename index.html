@@ -17,50 +17,113 @@
             <div class="row">
                 <div class="col-md-2">
                     <div class="windows-desktop-icon text-center">
-                        <img src="img/computer.ico" /><br/>
+                        <img src="img/computer.ico" />
+                        <br/>
                         <span>Meu Computador</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="windows-bar">
-            <div class="windows-buttons">
-                <div class="windows-button">
-                    <img src="img/windowsStart.png" />
+        <div class="windows-menu">
+            <div class="start-menu">
+                <div class="start-menu-tools">
+
+                </div>
+                <div class="start-menu-details">
+                    <div class="start-menu-files">
+                        <div class="start-menu-session">
+                            <div class="page-header">
+                                <h4>Palestras</h4>
+                            </div>
+                            <div class="start-menu-session-item">
+                                <img src="img/word.png" />
+                                <span> Palestra 1</span>
+                            </div>
+                            <div class="start-menu-session-item">
+                                <img src="img/word.png" />
+                                <span> Palestra 2</span>
+                            </div>
+                            <div class="start-menu-session-item">
+                                <img src="img/word.png" />
+                                <span> Palestra 3</span>
+                            </div>
+                        </div>
+                        <div class="start-menu-session">
+                            <div class="page-header">
+                                <h4>Palestrantes</h4>
+                            </div>
+                            <div class="start-menu-session-item">
+                                <img src="img/word.png" />
+                                <span> Palestrante 1</span>
+                            </div>
+                            <div class="start-menu-session-item">
+                                <img src="img/word.png" />
+                                <span> Palestrante 2</span>
+                            </div>
+                            <div class="start-menu-session-item">
+                                <img src="img/word.png" />
+                                <span> Palestrante 3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="start-menu-tiles">
+                    </div>
                 </div>
             </div>
-            <div class="windows-icons">
-                <div class="windows-icon">
-                    <img src="img/imageres_6155.ico" />
+            <div class="windows-bar">
+                <div class="windows-buttons">
+                    <div id="windowsStartButton" class="windows-button">
+                        <img src="img/windowsStart.png" />
+                    </div>
                 </div>
-                <div class="windows-icon">
-                    <img src="img/imageres_6155.ico" />
-                </div>
-                <div class="windows-icon">
-                    <img src="img/imageres_6155.ico" />
-                </div>
-                <div class="windows-clock text-center">
-                    <div class="windows-clock-time">
-                        <span class="hora"></span>
-                        <br/>
-                        <span class="data"></span>
+                <div class="windows-icons">
+                    <div class="windows-icon">
+                        <img src="img/imageres_6155.ico" />
+                    </div>
+                    <div class="windows-icon">
+                        <img src="img/imageres_6155.ico" />
+                    </div>
+                    <div class="windows-icon">
+                        <img src="img/imageres_6155.ico" />
+                    </div>
+                    <div class="windows-clock text-center">
+                        <div class="windows-clock-time">
+                            <span class="hora"></span>
+                            <br/>
+                            <span class="data"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="windows-window">
+        
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/util.js"></script>
     <script>
-        $(document).ready(function(){
-            
+        $(".start-menu").hide();
+
+        $(document).ready(function () {
+            $(".windows-button").click(function () {
+                $(".start-menu").toggle("fast");
+                
+                if($("#windowsStartButton").hasClass("ativo"))
+                {
+                    $("#windowsStartButton").removeClass("ativo");
+                }
+                else
+                {
+                    $("#windowsStartButton").addClass("ativo");
+                }
+            });
         });
-        
+
         var relogio = relogio();
-        
+
         setInterval(relogio, 1000);
     </script>
 </body>
-
 </html>
