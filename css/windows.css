@@ -192,6 +192,10 @@ body {
     float: right;
 }
 
+.windows-windows-name{
+    text-transform: capitalize;
+}
+
 .windows-window-corpo{
     width: 100%
 }
@@ -224,6 +228,10 @@ body {
 
 .windows-word-toolbar .icone-barra{
     background-color: #fff;
+}
+
+.windows-word-name{
+    text-transform: capitalize;
 }
 
 .windows-word-corpo{
