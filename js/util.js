@@ -54,7 +54,7 @@ function carregarPagina(tipo, destino) {
     $(".windows-" + tipo).fadeIn("fast");
 }
 
-function descarregarPagina() {
-    $(".windows-window-corpo").empty();
-    $(".windows-window").fadeOut("fast");
+function descarregarPagina(tipo) {
+    $(".windows-" + tipo + "-corpo").empty();
+    $(".windows-" + tipo).fadeOut("fast");
 }
