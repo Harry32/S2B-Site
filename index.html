@@ -120,6 +120,7 @@
                     <span class="icone-barra"></span>
                     <span class="icone-barra"></span>
                 </button>
+                <span class="windows-word-name"></span>
             </div>
             <div class="toolbar-right text-right">
                 <button id="windows-fechar" type="button" class="btn btn-default btn-windows">
@@ -127,7 +128,7 @@
                 </button>
             </div>
         </div>
-        <div class="windows-window-corpo"></div>
+        <div class="windows-word-corpo"></div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -143,7 +144,7 @@
             
             $(".click").click(function () {
                 
-                carregarPagina($(this).data("destino"));
+                carregarPagina("word", $(this).data("destino"));
                 
                 toggleStartMenu();
             });

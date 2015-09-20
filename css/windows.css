@@ -195,3 +195,37 @@ body {
 .windows-window-corpo{
     width: 100%
 }
+
+.windows-word{
+    height: 80%;
+    width: 60%;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+}
+
+.windows-word-toolbar{
+    height: 35px;
+    width: 100%;
+    padding: 5px;
+    overflow: hidden;
+    background-color: #2B579A;
+    color: #fff;
+}
+
+.windows-word-toolbar .btn-windows{
+    background-color: #2B579A;
+    color: #fff;
+}
+
+.windows-word-toolbar .icone-barra{
+    background-color: #fff;
+}
+
+.windows-word-corpo{
+    width: 100%
+}
