@@ -46,12 +46,12 @@ function toggleStartMenu() {
     }
 }
 
-function carregarPagina(destino) {
+function carregarPagina(tipo, destino) {
     var caminhoPagina = "pages/" + destino + ".html";
     
-    $(".windows-window-corpo").load(caminhoPagina);
-    $(".windows-window-name").text(destino + ".doc");
-    $(".windows-window").fadeIn("fast");
+    $(".windows-" + tipo + "-corpo").load(caminhoPagina);
+    $(".windows-" + tipo + "-name").html("<b>" + destino + ".doc</b>");
+    $(".windows-" + tipo).fadeIn("fast");
 }
 
 function descarregarPagina() {
