@@ -165,14 +165,33 @@ body {
 }
 
 .windows-window-toolbar {
+    height: 35px;
     width: 100%;
+    padding: 5px;
+    overflow: hidden;
 }
 
 .icone-barra {
     display: block;
     width: 22px;
     height: 2px;
-    background-color: #cccccc;
+    background-color: #4D4D4D;
     border-radius: 1px;
     margin-bottom: 2px;
+}
+
+.btn-windows{
+    border-width: 0px;
+}
+
+.toolbar-left{
+    float: left;
+}
+
+.toolbar-right{
+    float: right;
+}
+
+.windows-window-corpo{
+    width: 100%
 }

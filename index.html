@@ -34,36 +34,32 @@
                         </div>
                         <div class="start-menu-session">
                             <div class="page-header">
-                                <h4>Palestras</h4>
+                                <h4>Professores</h4>
                             </div>
-                            <div class="start-menu-session-item click">
+                            <div data-destino="harry" class="start-menu-session-item click">
                                 <img src="img/word.png" />
-                                <span> Palestra 1</span>
+                                <span>Harry</span>
                             </div>
-                            <div class="start-menu-session-item click">
+                            <div data-destino="rafael" class="start-menu-session-item click">
                                 <img src="img/word.png" />
-                                <span> Palestra 2</span>
-                            </div>
-                            <div class="start-menu-session-item click">
-                                <img src="img/word.png" />
-                                <span> Palestra 3</span>
+                                <span>Rafael Tavares</span>
                             </div>
                         </div>
                         <div class="start-menu-session">
                             <div class="page-header">
-                                <h4>Palestrantes</h4>
+                                <h4>Palestras</h4>
                             </div>
                             <div class="start-menu-session-item click">
                                 <img src="img/word.png" />
-                                <span> Palestrante 1</span>
+                                <span>Palestra 1</span>
                             </div>
                             <div class="start-menu-session-item click">
                                 <img src="img/word.png" />
-                                <span> Palestrante 2</span>
+                                <span>Palestra 2</span>
                             </div>
                             <div class="start-menu-session-item click">
                                 <img src="img/word.png" />
-                                <span> Palestrante 3</span>
+                                <span>Palestra 3</span>
                             </div>
                         </div>
                     </div>
@@ -100,42 +96,60 @@
     </div>
     <div class="windows-window">
         <div class="windows-window-toolbar">
-            <button type="button" class="btn btn-default">
-                <span class="icone-barra"></span>
-                <span class="icone-barra"></span>
-                <span class="icone-barra"></span>
-            </button>
+           <div class="toolbar-left text-left">
+                <button type="button" class="btn btn-default btn-windows">
+                    <span class="icone-barra"></span>
+                    <span class="icone-barra"></span>
+                    <span class="icone-barra"></span>
+                </button>
+                <span class="windows-window-name"></span>
+            </div>
+            <div class="toolbar-right text-right">
+                <button id="windows-fechar" type="button" class="btn btn-default btn-windows">
+                    <span>X</span>
+                </button>
+            </div>
         </div>
-
+        <div class="windows-window-corpo"></div>
+    </div>
+    <div class="windows-word">
+        <div class="windows-word-toolbar">
+           <div class="toolbar-left text-left">
+                <button type="button" class="btn btn-default btn-windows">
+                    <span class="icone-barra"></span>
+                    <span class="icone-barra"></span>
+                    <span class="icone-barra"></span>
+                </button>
+            </div>
+            <div class="toolbar-right text-right">
+                <button id="windows-fechar" type="button" class="btn btn-default btn-windows">
+                    <span>X</span>
+                </button>
+            </div>
+        </div>
+        <div class="windows-window-corpo"></div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/util.js"></script>
+    <script src="libraries/CKEditor/ckeditor.js"></script>
     <script>
-        $(".start-menu").hide();
-        $(".windows-window").hide();
+        esconderElementos();
 
         $(document).ready(function () {
             $(".windows-button").click(function () {
-                $(".start-menu").toggle("fast");
-
-                if ($("#windowsStartButton").hasClass("ativo")) {
-                    $("#windowsStartButton").removeClass("ativo");
-                } else {
-                    $("#windowsStartButton").addClass("ativo");
-                }
+                toggleStartMenu();
             });
             
             $(".click").click(function () {
-                $(".windows-window").fadeIn("fast");
                 
-                $(".start-menu").toggle("fast");
-
-                if ($("#windowsStartButton").hasClass("ativo")) {
-                    $("#windowsStartButton").removeClass("ativo");
-                } else {
-                    $("#windowsStartButton").addClass("ativo");
-                }
+                carregarPagina($(this).data("destino"));
+                
+                toggleStartMenu();
+            });
+            
+            $("#windows-fechar").click(function () {
+                descarregarPagina();
             });
         });
 
