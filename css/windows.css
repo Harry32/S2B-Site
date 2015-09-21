@@ -13,6 +13,111 @@ body {
     width: 100vw;
 }
 
+#loading-page {
+    background-color: #000000;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 47% 49%;
+    background-size: 100px;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 666;
+    display: block;
+}
+
+.loading-page-corpo{
+    top: 50%;
+    transform: translateY(100%);
+}
+
+#loading-page img {
+    width: 197px;
+    height: 176px;
+}
+
+.loader {
+    position: relative;
+    padding-top: 100px;
+    width: 40px;
+    margin: auto;
+}
+
+.loader .circle {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    opacity: 0;
+    transform: rotate(225deg);
+    animation-iteration-count: infinite;
+    animation-name: orbit;
+    animation-duration: 5.5s;
+}
+
+.loader .circle:after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background: #fff;
+    /* Pick a color */
+}
+
+.loader .circle:nth-child(2) {
+    animation-delay: 240ms;
+}
+
+.loader .circle:nth-child(3) {
+    animation-delay: 480ms;
+}
+
+.loader .circle:nth-child(4) {
+    animation-delay: 720ms;
+}
+
+.loader .circle:nth-child(5) {
+    animation-delay: 960ms;
+}
+
+@keyframes orbit {
+    0% {
+        transform: rotate(225deg);
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    7% {
+        transform: rotate(345deg);
+        animation-timing-function: linear;
+    }
+    30% {
+        transform: rotate(455deg);
+        animation-timing-function: ease-in-out;
+    }
+    39% {
+        transform: rotate(690deg);
+        animation-timing-function: linear;
+    }
+    70% {
+        transform: rotate(815deg);
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    75% {
+        transform: rotate(945deg);
+        animation-timing-function: ease-out;
+    }
+    76% {
+        transform: rotate(945deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(945deg);
+        opacity: 0;
+    }
+}
+
 #corpo {
     height: 100vh;
     width: 100vw;
@@ -180,27 +285,27 @@ body {
     margin-bottom: 2px;
 }
 
-.btn-windows{
+.btn-windows {
     border-width: 0px;
 }
 
-.toolbar-left{
+.toolbar-left {
     float: left;
 }
 
-.toolbar-right{
+.toolbar-right {
     float: right;
 }
 
-.windows-windows-name{
+.windows-windows-name {
     text-transform: capitalize;
 }
 
-.windows-window-corpo{
+.windows-window-corpo {
     width: 100%
 }
 
-.windows-word{
+.windows-word {
     height: 80%;
     width: 60%;
     position: absolute;
@@ -212,7 +317,7 @@ body {
     box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
 }
 
-.windows-word-toolbar{
+.windows-word-toolbar {
     height: 35px;
     width: 100%;
     padding: 5px;
@@ -221,19 +326,19 @@ body {
     color: #fff;
 }
 
-.windows-word-toolbar .btn-windows{
+.windows-word-toolbar .btn-windows {
     background-color: #2B579A;
     color: #fff;
 }
 
-.windows-word-toolbar .icone-barra{
+.windows-word-toolbar .icone-barra {
     background-color: #fff;
 }
 
-.windows-word-name{
+.windows-word-name {
     text-transform: capitalize;
 }
 
-.windows-word-corpo{
+.windows-word-corpo {
     width: 100%
 }

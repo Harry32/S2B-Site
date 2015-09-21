@@ -36,6 +36,12 @@ function relogio() {
     $(".hora").text(hora);
 }
 
+function exibirCarregamento() {
+    setTimeout(function () {
+        $("#loading-page").fadeOut("slow");
+    }, 3000);
+}
+
 function toggleStartMenu() {
     $(".start-menu").toggle("fast");
 
@@ -48,7 +54,7 @@ function toggleStartMenu() {
 
 function carregarPagina(tipo, destino) {
     var caminhoPagina = "pages/" + destino + ".html";
-    
+
     $(".windows-" + tipo + "-corpo").load(caminhoPagina);
     $(".windows-" + tipo + "-name").html("<b>" + destino + ".doc</b>");
     $(".windows-" + tipo).fadeIn("fast");
