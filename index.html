@@ -12,6 +12,18 @@
 </head>
 
 <body>
+    <div id="loading-page" class="text-center">
+        <div class=loading-page-corpo>
+            <img src="img/windowsStart.png" />
+            <div class='loader'>
+                <div class='circle'></div>
+                <div class='circle'></div>
+                <div class='circle'></div>
+                <div class='circle'></div>
+                <div class='circle'></div>
+            </div>
+        </div>
+    </div>
     <div id="corpo">
         <div class="windows-desktop">
             <div class="row">
@@ -96,7 +108,7 @@
     </div>
     <div class="windows-window">
         <div class="windows-window-toolbar">
-           <div class="toolbar-left text-left">
+            <div class="toolbar-left text-left">
                 <button type="button" class="btn btn-default btn-windows">
                     <span class="icone-barra"></span>
                     <span class="icone-barra"></span>
@@ -114,7 +126,7 @@
     </div>
     <div class="windows-word">
         <div class="windows-word-toolbar">
-           <div class="toolbar-left text-left">
+            <div class="toolbar-left text-left">
                 <button type="button" class="btn btn-default btn-windows">
                     <span class="icone-barra"></span>
                     <span class="icone-barra"></span>
@@ -137,18 +149,22 @@
     <script>
         esconderElementos();
 
+        $(window).load(function () {
+            exibirCarregamento();
+        });
+
         $(document).ready(function () {
             $(".windows-button").click(function () {
                 toggleStartMenu();
             });
-            
+
             $(".click").click(function () {
-                
+
                 carregarPagina("word", $(this).data("destino"));
-                
+
                 toggleStartMenu();
             });
-            
+
             $("#word-fechar").click(function () {
                 descarregarPagina("word");
             });
