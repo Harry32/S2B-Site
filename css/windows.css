@@ -1,12 +1,6 @@
 body {
-    /* For Safari 5.1 to 6.0 */
-    background: -webkit-linear-gradient(#001F4C, #0066FF);
-    /* For Opera 11.1 to 12.0 */
-    background: -o-linear-gradient(#001F4C, #0066FF);
-    /* For Firefox 3.6 to 15 */
-    background: -moz-linear-gradient(#001F4C, #0066FF);
-    /* Standard syntax */
-    background: linear-gradient(#001F4C, #0066FF);
+    background-image: url("../img/Win10WallpaperG.jpg");
+    background-size: 100%;
     /* This is needed to overcome a Chrome bug. */
     height: 100vh;
     /* As above. */
@@ -27,7 +21,7 @@ body {
     display: block;
 }
 
-.loading-page-corpo{
+.loading-page-corpo {
     top: 50%;
     transform: translateY(100%);
 }
@@ -196,7 +190,7 @@ body {
 }
 
 .windows-desktop {
-    margin: 15px 0 0 15px;
+    padding: 15px 0 0 15px;
 }
 
 .windows-desktop-icon {
@@ -214,7 +208,8 @@ body {
 
 .start-menu {
     color: #fff;
-    background-color: #304A6D;
+    background-color: rgb(48, 74, 109);
+    background-color: rgba(48, 74, 109, 0.5);
     width: 35%;
 }
 
@@ -257,6 +252,23 @@ body {
 
 .start-menu-session-item:hover {
     background-color: #596E8A;
+}
+
+.tiles-row {
+    overflow: hidden;
+}
+
+.start-menu-tile {
+    margin: 10px;
+}
+
+.tile-150x150 {
+    width: 150px;
+    height: 150px;
+}
+
+.tile-azul {
+    background-color: #3E73D7;
 }
 
 .windows-window {

@@ -18,7 +18,7 @@ uma navegação por uma interface que lembre o sistema operacional. Abaixo os re
     * Cursos &#128336;
     * Professores &#128336;
     * Localização &#128336;
-  * Tiles do lado direito com acesso a pastas com os itens listados acima &#128336;
+  * Tiles do lado direito com acesso a pastas com os itens listados acima &#10008;
     * Cada item deverá ter o icone de sua extensão &#128336;
 * Janelas dinamicas para recebimento das informações &#128336;
   * Barra de ferramentas interativa &#128336;
