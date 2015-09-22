@@ -259,7 +259,17 @@ body {
 }
 
 .start-menu-tile {
-    margin: 10px;
+    display: table;
+    float: left;
+    
+    margin: 5px;
+}
+
+.start-menu-tile .glyphicon{
+    display: table-cell;
+    vertical-align: middle;
+    text-align:center;
+    width: 100%;
 }
 
 .tile-150x150 {
