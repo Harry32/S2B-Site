@@ -2,6 +2,7 @@ function esconderElementos() {
     $(".start-menu").hide();
     $(".windows-window").hide();
     $(".windows-word").hide();
+    $(".windows-edge").hide();
 }
 
 function relogio() {
@@ -54,9 +55,21 @@ function toggleStartMenu() {
 
 function carregarPagina(tipo, destino) {
     var caminhoPagina = "pages/" + destino + ".html";
-
+    var nome = destino;
+    
+    if(tipo == "word")
+    {
+        nome += ".doc";
+    }
+    else
+    {
+        nome = "Início"
+    }
+    
+    nome = nome.replace("_", " ");
+        
     $(".windows-" + tipo + "-corpo").load(caminhoPagina);
-    $(".windows-" + tipo + "-name").html("<b>" + destino + ".doc</b>");
+    $(".windows-" + tipo + "-name").html("<b>" + nome + "</b>");
     $(".windows-" + tipo).fadeIn("fast");
 }
 

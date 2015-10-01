@@ -28,7 +28,7 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Remove some buttons provided by the standard plugins, which are
 	// not needed in the Standard(s) toolbar.
-	config.removeButtons = 'Underline,Subscript,Superscript';
+	//config.removeButtons = 'Underline,Subscript,Superscript';
 
 	// Set the most common block elements.
 	config.format_tags = 'p;h1;h2;h3;pre';
@@ -40,6 +40,5 @@ CKEDITOR.editorConfig = function( config ) {
     config.height = 500;
     config.resize_enabled = false;
     config.removePlugins = 'elementspath';
-    config.extraPlugins = 'image';
-    config.extraPlugins = 'justify';
+    config.extraPlugins = 'image,justify,colorbutton,font';
 };
