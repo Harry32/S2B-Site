@@ -46,11 +46,11 @@
                             <div class="page-header">
                                 <h4>Professores</h4>
                             </div>
-                            <div data-destino="harry" class="start-menu-session-item click">
+                            <div data-destino="harry" data-janela="word" class="start-menu-session-item click">
                                 <img src="img/word.png" />
                                 <span>Harry</span>
                             </div>
-                            <div data-destino="rafael" class="start-menu-session-item click">
+                            <div data-destino="rafael" data-janela="word" class="start-menu-session-item click">
                                 <img src="img/word.png" />
                                 <span>Rafael Tavares</span>
                             </div>
@@ -59,11 +59,11 @@
                             <div class="page-header">
                                 <h4>Cursos</h4>
                             </div>
-                            <div data-destino="desenvolvimento" class="start-menu-session-item click">
+                            <div data-destino="desenvolvimento" data-janela="word" class="start-menu-session-item click">
                                 <img src="img/word.png" />
                                 <span>Desenvolvimento</span>
                             </div>
-                            <div data-destino="redes" class="start-menu-session-item click">
+                            <div data-destino="redes" data-janela="word" class="start-menu-session-item click">
                                 <img src="img/word.png" />
                                 <span>Redes</span>
                             </div>
@@ -71,11 +71,67 @@
                     </div>
                     <div class="start-menu-tiles">
                         <div class="tiles-row">
-                            <div class="start-menu-tile tile-150x150 tile-azul">
-                                <span>Professores</span>
+                            <div data-destino="o_programa" data-janela="word" class="start-menu-tile tile-150x150 tile-verde click">
+                                <div class="tile-img">
+                                    <img src="img/S2B.png" />
+                                </div>
+                                <div class="tile-text">
+                                    <span>O Programa</span>
+                                </div>
                             </div>
-                            <div class="start-menu-tile tile-150x150 tile-azul">
-                                <span>Professores</span>
+                            <div data-destino="cursos" data-janela="window" class="start-menu-tile tile-150x150 tile-vermelho click">
+                                <div class="tile-img">
+                                    <img src="img/Noticias.png" />
+                                </div>
+                                <div class="tile-text">
+                                    <span>Cursos</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tiles-row">
+                            <div data-destino="regulamento" data-janela="word" class="start-menu-tile tile-150x300 tile-vermelho click">
+                                <div class="tile-img">
+                                    <img src="img/Lista.png" />
+                                </div>
+                                <div class="tile-text">
+                                    <span>Regulamento</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tiles-row">
+                            <div data-destino="professores" data-janela="window" class="start-menu-tile tile-150x150 tile-azul click">
+                                <div class="tile-img">
+                                    <img src="img/Pessoas.png" />
+                                </div>
+                                <div class="tile-text">
+                                    <span>Professores</span>
+                                </div>
+                            </div>
+                            <div data-destino="cronograma" data-janela="word" class="start-menu-tile tile-150x150 tile-roxo click">
+                                <div class="tile-img">
+                                    <img src="img/Calendario.png" />
+                                </div>
+                                <div class="tile-text">
+                                    <span>Cronograma</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tiles-row">
+                            <div data-destino="mapa" data-janela="window" class="start-menu-tile tile-150x150 tile-rosa click">
+                                <div class="tile-img">
+                                    <img src="img/Mapa.png" />
+                                </div>
+                                <div class="tile-text">
+                                    <span>Localização</span>
+                                </div>
+                            </div>
+                            <div data-destino="" data-janela="edge" class="start-menu-tile tile-150x150 tile-azul-edge click">
+                                <div class="tile-img">
+                                    <img src="img/edgeBranco.png" />
+                                </div>
+                                <div class="tile-text">
+                                    <span>Edge</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -144,6 +200,29 @@
         </div>
         <div class="windows-word-corpo"></div>
     </div>
+    <div class="windows-edge">
+        <div class="windows-edge-toolbar">
+            <div class="toolbar-left text-left">
+                <button type="button" class="btn btn-default btn-windows">
+                    <span class="icone-barra"></span>
+                    <span class="icone-barra"></span>
+                    <span class="icone-barra"></span>
+                </button>
+                <span class="windows-edge-name"></span>
+            </div>
+            <div class="toolbar-right text-right">
+                <button id="edge-fechar" type="button" class="btn btn-default btn-windows">
+                    <span>X</span>
+                </button>
+            </div>
+        </div>
+        <div class="windows-edge-nav">
+            <form>
+                <input id="barraEndereco" type="text" placeholder="Digite o endereço aqui">
+            </form>
+        </div>
+        <div class="windows-edge-corpo"></div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/util.js"></script>
@@ -162,13 +241,39 @@
 
             $(".click").click(function () {
 
-                carregarPagina("word", $(this).data("destino"));
+                carregarPagina($(this).data("janela"), $(this).data("destino"));
 
                 toggleStartMenu();
             });
 
+            $(".windows-window-corpo").on("click", ".click", function () {
+
+                carregarPagina($(this).data("janela"), $(this).data("destino"));
+            });
+
+            $(".windows-edge").on("submit", "form", function (event) {
+                event.preventDefault();
+                
+                var endereco = $(this).find("input").val();;
+                //$(".windows-edge-corpo").html("<object data='" + endereco + "' />");
+                $.ajax({
+                    url: endereco,
+                    success: function(result){
+                        $(".windows-edge-corpo").html(result);
+                    }
+                });
+            });
+            
             $("#word-fechar").click(function () {
                 descarregarPagina("word");
+            });
+
+            $("#windows-fechar").click(function () {
+                descarregarPagina("window");
+            });
+
+            $("#edge-fechar").click(function () {
+                descarregarPagina("edge");
             });
         });
 
