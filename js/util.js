@@ -77,3 +77,7 @@ function descarregarPagina(tipo) {
     $(".windows-" + tipo + "-corpo").empty();
     $(".windows-" + tipo).fadeOut("fast");
 }
+
+function opendialog(page) {
+  var $dialog = $('.windows-edge-corpo').html('<iframe style="border: 0px; " src="' + page + '" width="100%" height="100%"></iframe>');
+}
