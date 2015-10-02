@@ -8,6 +8,7 @@
     <title>S2B Aracaju</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/windows.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
     <script></script>
 </head>
 
@@ -227,6 +228,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/util.js"></script>
     <script src="libraries/CKEditor/ckeditor.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
     <script>
         esconderElementos();
 
@@ -254,14 +256,8 @@
             $(".windows-edge").on("submit", "form", function (event) {
                 event.preventDefault();
                 
-                var endereco = $(this).find("input").val();;
-                //$(".windows-edge-corpo").html("<object data='" + endereco + "' />");
-                $.ajax({
-                    url: endereco,
-                    success: function(result){
-                        $(".windows-edge-corpo").html(result);
-                    }
-                });
+                var endereco = $(this).find("input").val();
+                opendialog(endereco);
             });
             
             $("#word-fechar").click(function () {

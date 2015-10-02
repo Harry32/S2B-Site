@@ -5,6 +5,9 @@ body {
     height: 100vh;
     /* As above. */
     width: 100vw;
+    overflow: hidden-unscrollable;
+    overflow: -moz-hidden-unscrollable;
+    overflow: -webkit-hidden-unscrollable;
 }
 
 #loading-page {
@@ -210,7 +213,10 @@ body {
     color: #fff;
     background-color: rgb(48, 74, 109);
     background-color: rgba(48, 74, 109, 0.5);
-    width: 35%;
+    max-height: 500px;
+    width: max-content;
+    width: -moz-max-content;
+    width: -webkit-max-content;
 }
 
 .start-menu-details {
@@ -220,7 +226,7 @@ body {
 
 .start-menu-files {
     float: left;
-    width: 35%;
+    width: 250px;
 }
 
 .start-menu-tools {
@@ -235,7 +241,24 @@ body {
 
 .start-menu-tiles {
     float: left;
-    width: 65%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 500px;
+}
+
+.start-menu-tiles::scrollbar {
+    width: 16px;
+    background-color: #cccccc;
+}
+
+.start-menu-tiles::-moz-scrollbar {
+    width: 16px;
+    background-color: #cccccc;
+}
+
+.start-menu-tiles::-webkit-scrollbar {
+    width: 16px;
+    background-color: #cccccc;
 }
 
 .start-menu-session {}
@@ -261,14 +284,13 @@ body {
 .start-menu-tile {
     float: left;
     margin: 5px;
-    
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     border: 2px solid transparent;
 }
 
-.start-menu-tile:hover{
+.start-menu-tile:hover {
     border: 2px solid #99CCFF;
 }
 
@@ -442,21 +464,22 @@ body {
     color: #000;
 }
 
-.windows-edge-nav{
+.windows-edge-nav {
     height: 35px;
     width: 100%;
     overflow: hidden;
     background-color: #f2f2f2;
 }
 
-.windows-edge-nav input{
+.windows-edge-nav input {
     height: 30px;
     border: none;
     width: 100%;
     background-color: #f2f2f2;
 }
 
-.windows-edge-nav input:focus, .windows-edge-nav input:hover{
+.windows-edge-nav input:focus,
+.windows-edge-nav input:hover {
     background-color: #fff;
 }
 
@@ -464,20 +487,19 @@ body {
     width: 100%
 }
 
-.janela-icon{
+.janela-icon {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     border: 2px solid transparent;
-    
     width: 80px;
 }
 
-.janela-icon:hover{
+.janela-icon:hover {
     border: 2px solid #99CCFF;
 }
 
-.janela-icon img{
+.janela-icon img {
     height: 64px;
     width: 64px;
 }
